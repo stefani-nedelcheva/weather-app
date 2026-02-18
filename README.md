@@ -17,8 +17,8 @@ No local PHP/MySQL/Redis installation is required.
 ## 1) Clone the project
 
 ```bash
-git clone https://github.com/stefani-nedelcheva/weather-service-app.git
-cd weather-service-app
+git clone https://github.com/stefani-nedelcheva/weather-app.git
+cd weather-app
 ```
 
 ## 2) Create `.env`
