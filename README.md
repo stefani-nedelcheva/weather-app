@@ -78,7 +78,7 @@ Option B (Laravel Sail wrapper, equivalent):
 ./vendor/bin/sail ps
 ```
 
-## 5) App key and migrations
+## 5) Migrations
 
 Using Docker Compose:
 
@@ -134,29 +134,4 @@ CREATE TABLE IF NOT EXISTS weather (
   KEY weather_created_at_index (created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 "
-```
-
-### Port conflict on localhost
-
-Set another port in `.env`, for example:
-
-```env
-APP_PORT=8081
-```
-
-Then restart:
-
-```bash
-docker compose down
-docker compose up -d --build
-```
-
-### Composer platform error (`requires PHP >= 8.4`)
-
-Regenerate dependencies in the container runtime:
-
-```bash
-docker compose exec laravel.test rm -rf vendor composer.lock
-docker compose exec laravel.test composer install
-docker compose exec laravel.test php artisan optimize:clear
 ```
